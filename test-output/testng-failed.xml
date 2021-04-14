@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" verbose="3" name="Failed suite [Demo CartApp Test automtion regression suite]" parallel="tests">
+  <test thread-count="3" verbose="3" name="Demo Cart Feature Testing - Product page(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.opencart.Tests.ProductPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="captureProductDetails"/>
+          <include name="accPageSetup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Tests.ProductPageTest -->
+    </classes>
+  </test> <!-- Demo Cart Feature Testing - Product page(failed) -->
+  <test thread-count="3" verbose="3" name="Demo Cart Feature Testing - login(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.opencart.Tests.LoginPageTest">
+        <methods>
+          <include name="verifyTitleTest"/>
+          <include name="verifyUrlTest"/>
+          <include name="setUp"/>
+          <include name="verifyForgotPwdLinkTest"/>
+          <include name="loginToApplication"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Tests.LoginPageTest -->
+    </classes>
+  </test> <!-- Demo Cart Feature Testing - login(failed) -->
+  <test thread-count="3" verbose="3" name="Demo Cart Feature Testing - Accounts Page (failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.opencart.Tests.AccountsPageTest">
+        <methods>
+          <include name="verifyLogoutLinkTest"/>
+          <include name="accSectionsListTest"/>
+          <include name="setUp"/>
+          <include name="verifyAccPageTitleTest"/>
+          <include name="verifyAccPageHeaderTest"/>
+          <include name="tearDown"/>
+          <include name="accPageSetup"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Tests.AccountsPageTest -->
+    </classes>
+  </test> <!-- Demo Cart Feature Testing - Accounts Page (failed) -->
+</suite> <!-- Failed suite [Demo CartApp Test automtion regression suite] -->
