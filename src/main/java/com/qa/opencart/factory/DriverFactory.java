@@ -1,10 +1,14 @@
 package com.qa.opencart.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -67,8 +71,39 @@ public class DriverFactory {
 	 */
 	public Properties init_prop() {
 		prop=new Properties();
+		FileInputStream ip = null;
+		
+		String env=System.getProperty("env");
+		
+		if(env==null) {
+			System.out.println("Running on Environment: --> On PROD");
+			try {
+				ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\config.properties");
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}else {
+			System.out.println("Running on Environment: --> "+env);
+			try {
+				switch (env) {
+				case "qa":
+					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\qa.config.properties");
+					break;
+				case "dev":
+					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\dev.config.properties");
+					break;
+				case "stage":
+					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\stage.config.properties");
+					break;
+					
+				default:
+					break;
+				}
+			}catch(FileNotFoundException e){
+				e.printStackTrace();
+			}
+		}
 		try {
-			FileInputStream ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
@@ -76,7 +111,21 @@ public class DriverFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		return prop;
+	}
+	
+	public String getScreenshot() {
+		File src=((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+		
+		String path=System.getProperty("user.dir")+"/screenshots/"+System.currentTimeMillis()+".jpg";
+		File destination=new File(path);
+		
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return path;
 	}
 }

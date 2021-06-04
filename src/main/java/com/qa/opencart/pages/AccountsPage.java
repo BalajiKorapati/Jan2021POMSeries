@@ -28,11 +28,11 @@ public class AccountsPage {
 	}
 	
 	public String getAccPageTitle() {
-		return elementUtil.doGetPageTitleWithIs(5, Constants.ACCOUNTS_PAGE_TITLE);
+		return elementUtil.waitForTitle(5, Constants.ACCOUNTS_PAGE_TITLE);
 	}
 	
 	public void getAccPageUrl() {
-		elementUtil.getPageURL();
+		elementUtil.getPageUrl();
 	}
 	
 	public String getAccPageHeader() {
@@ -41,7 +41,7 @@ public class AccountsPage {
 	
 	public List<String> getAccSelectionsList() {
 		List<String> secListi = new ArrayList<String>(); 
-		List<WebElement> list = elementUtil.doWaitForElementsToVisible(5, accHeaders);
+		List<WebElement> list = elementUtil.waitForVisibilityOfElements(accHeaders, 5);
 		
 		for (WebElement ele : list) {
 			secListi.add(ele.getText());

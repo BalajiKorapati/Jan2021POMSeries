@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -18,20 +19,25 @@ public class ProductPageTest extends BaseTest{
 		accountsPage=loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
-//	@Test
-//	public void productCountTest() {
-//		searchResultsPage = accountsPage.doSearch("Macbook");
-//		Assert.assertTrue(searchResultsPage.getProductResultsCount() == 3);
-//	}
-//	
-//	@Test
-//	public void productImagesTest() {
-//		searchResultsPage = accountsPage.doSearch("Macbook");
-//		productInfoPage = searchResultsPage.selectProductFromResults("MacBook Pro");
-//		Assert.assertTrue(productInfoPage.getProductImagesCount() == 4);
-//	}
+	@DataProvider
+	public Object[][] searchData(){
+		return new Object[][] {{"Macbook"},{"iMac"}, {"iPhone"}};
+	}
 	
-	@Test
+	@Test(dataProvider = "searchData")
+	public void productCountTest(String productName) {
+		searchResultsPage = accountsPage.doSearch(productName);
+		Assert.assertTrue(searchResultsPage.getProductResultsCount() > 0);
+	}
+	
+	@Test(enabled=false)
+	public void productImagesTest() {
+		searchResultsPage = accountsPage.doSearch("Macbook");
+		productInfoPage = searchResultsPage.selectProductFromResults("MacBook Pro");
+		Assert.assertTrue(productInfoPage.getProductImagesCount() == 4);
+	}
+	
+	@Test(enabled=false)
 	public void captureProductDetails() {
 		searchResultsPage=accountsPage.doSearch("Macbook");
 		productInfoPage=searchResultsPage.selectProductFromResults("MacBook Pro");

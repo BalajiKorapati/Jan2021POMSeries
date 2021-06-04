@@ -1,6 +1,7 @@
 package com.qa.opencart.Tests;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
@@ -17,7 +18,7 @@ public class LoginPageTest extends BaseTest{
 	
 	@Test(priority = 2)
 	public void verifyUrlTest() {
-		Assert.assertTrue(loginPage.getLoginPageUrl().contains(Constants.LOGIN_PAGE_URL));
+		Assert.assertTrue(loginPage.getLoginPageUrl().contains(Constants.LOGIN_URL_VALUE));
 	}
 	
 	@Test(priority = 4)
@@ -28,5 +29,20 @@ public class LoginPageTest extends BaseTest{
 	@Test(priority = 3)
 	public void verifyForgotPwdLinkTest() {
 		Assert.assertTrue(loginPage.isForgotPwdLinkExist());
+	}
+	
+	
+	@DataProvider
+	public Object[][] negLoginData() {
+		return new Object[][] {
+								{"test@gmail.com", "test123"},
+								{"test1@gmail.com", "test1123"},
+								{" ", " "}
+								};
+	}
+	
+	@Test(priority = 0, dataProvider = "negLoginData")
+	public void loginNegativeTest(String un, String pwd) {
+		loginPage.doNegativeLogin(un, pwd);
 	}
 }

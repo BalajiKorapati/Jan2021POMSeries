@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Demo CartApp Test automtion regression suite" verbose="3" thread-count="4" parallel="tests">
 <listeners>
-		<!--<listener class-name="com.qa.hubspot.testlisteners.ExtentReportListener" />
-   		<listener class-name="com.qa.hubspot.testlisteners.TestAllureListener" />
-   		<listener class-name="com.qa.hubspot.testlisteners.pdfListener" />-->
+		<listener class-name="com.qa.opencart.listeners.ExtentReportListener" />
+   		<listener class-name="com.qa.opencart.listeners.TestAllureListener" />
+   		<!--<listener class-name="com.qa.hubspot.testlisteners.pdfListener" />-->
  </listeners>
+ 
+  <!--<test name="Demo Cart Feature Testing - Registration">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.opencart.Tests.RegistrationPageTest" />
+		</classes>
+	</test> -->
 	<test name="Demo Cart Feature Testing - login">
 	<parameter name="browser" value="chrome" />
 		<classes>
@@ -14,7 +20,7 @@
 		</classes>
 	</test>
 
-	<test name="Demo Cart Feature Testing - Accounts Page ">
+	<!--<test name="Demo Cart Feature Testing - Accounts Page ">
 	<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.opencart.Tests.AccountsPageTest" />
@@ -26,6 +32,6 @@
 		<classes> 
 			<class name="com.qa.opencart.Tests.ProductPageTest" /> 
 		</classes> 
-	</test>
+	</test> -->
 
 </suite>
