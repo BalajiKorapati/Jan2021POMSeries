@@ -41,7 +41,7 @@ public class LoginPageTest extends BaseTest{
 								};
 	}
 	
-	@Test(priority = 0, dataProvider = "negLoginData")
+	@Test(priority = 0, dataProvider = "negLoginData", enabled=false)
 	public void loginNegativeTest(String un, String pwd) {
 		loginPage.doNegativeLogin(un, pwd);
 	}
