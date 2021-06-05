@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build the Project'
+            }
+        }
+        
+        stage('Deploy on Dev') {
+            steps {
+                echo 'Deploy on Dev'
+            }
+        }
+        
+        stage('Deploy on QA') {
+            steps {
+                echo 'Deploy on QA'
+            }
+        }
+        
+        stage('Smoke Test') {
+            steps {
+                echo 'Smoke Test'
+            }
+        }
+        
+        stage('Regression Test') {
+            steps {
+                echo 'Regression Test'
+            }
+        }
+        
+        stage('Deploy on Stage') {
+            steps {
+                echo 'Deploy on Stage'
+            }
+        }
+        
+        stage('Deploy on PROD') {
+            steps {
+                echo 'Deploy on PROD'
+            }
+        }
+    }
+}
