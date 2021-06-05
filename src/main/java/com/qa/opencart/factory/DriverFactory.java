@@ -78,7 +78,7 @@ public class DriverFactory {
 		if(env==null) {
 			System.out.println("Running on Environment: --> On PROD");
 			try {
-				ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\config.properties");
+				ip = new FileInputStream(".\\src\\test\\resources\\config\\config.properties");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -87,13 +87,13 @@ public class DriverFactory {
 			try {
 				switch (env) {
 				case "qa":
-					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\qa.config.properties");
+					ip = new FileInputStream(".src\\test\\resources\\config\\qa.config.properties");
 					break;
 				case "dev":
-					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\dev.config.properties");
+					ip = new FileInputStream(".src\\test\\resources\\config\\dev.config.properties");
 					break;
 				case "stage":
-					ip = new FileInputStream("C:\\Users\\bakorapa\\eclipse-workspace\\Jan2021POMSeries\\src\\test\\resources\\config\\stage.config.properties");
+					ip = new FileInputStream(".\\src\\test\\resources\\config\\stage.config.properties");
 					break;
 					
 				default:
