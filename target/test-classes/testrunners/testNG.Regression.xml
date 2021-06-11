@@ -20,14 +20,14 @@
 		</classes>
 	</test>
 
-	<!--<test name="Demo Cart Feature Testing - Accounts Page ">
+	<test name="Demo Cart Feature Testing - Accounts Page ">
 	<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.opencart.Tests.AccountsPageTest" />
 		</classes>
 	</test>
 
-	<test name="Demo Cart Feature Testing - Product page"> 
+	<!--<test name="Demo Cart Feature Testing - Product page"> 
 	<parameter name="browser" value="chrome" />
 		<classes> 
 			<class name="com.qa.opencart.Tests.ProductPageTest" /> 
