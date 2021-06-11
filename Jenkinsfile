@@ -8,7 +8,7 @@ agent any
 
             }
         }
- //for windows ---> bat "mvn clean install"   
+ //for linux ---> bat "mvn clean install"   
         stage('Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -18,19 +18,19 @@ agent any
         }
                 
      
-//        stage('Publish Allure Reports') {
-//           steps {
-//                script {
-//                    allure([
-//                        includeProperties: false,
-//                        jdk: '',
-//                        properties: [],
-//                        reportBuildPolicy: 'ALWAYS',
-//                        results: [[path: '/allure-results']]
-//                    ])
-//                }
-//            }
-//        }
+        stage('Publish Allure Reports') {
+           steps {
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: '/allure-results']]
+                    ])
+                }
+            }
+        }
         
         
         stage('Publish Extent Report'){
