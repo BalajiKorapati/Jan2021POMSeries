@@ -13,15 +13,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 import java.util.TreeMap;
 
 import javax.imageio.ImageIO;
-
-//import commonUtilities.Config;
-import javafx.scene.chart.PieChart;
-import javafx.scene.chart.PieChartBuilder;
 
 
 public class CustumReport 
