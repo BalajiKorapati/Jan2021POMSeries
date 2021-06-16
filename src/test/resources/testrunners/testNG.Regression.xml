@@ -14,7 +14,7 @@
 		</classes>
 	</test> -->
 	<test name="Demo Cart Feature Testing - login">
-	<parameter name="browser" value="chrome" />
+	<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.opencart.Tests.LoginPageTest" />
 		</classes>
@@ -28,7 +28,7 @@
 	</test>
 
 	<!--<test name="Demo Cart Feature Testing - Product page"> 
-	<parameter name="browser" value="chrome" />
+	<parameter name="browser" value="firefox" />
 		<classes> 
 			<class name="com.qa.opencart.Tests.ProductPageTest" /> 
 		</classes> 
