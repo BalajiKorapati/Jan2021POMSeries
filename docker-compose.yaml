@@ -17,6 +17,8 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+    ports:
+    - "3300"
 
   firefox:
     image: selenium/node-firefox:3.141.59-20210607
@@ -27,6 +29,8 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+    ports:
+    - "3301"
 
   opera:
     image: selenium/node-opera:3.141.59-20210607
