@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="1" total="9" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo CartApp Test automtion regression suite" duration-ms="0" started-at="2021-06-16T16:52:35Z" finished-at="2021-06-16T16:52:35Z">
+  <suite name="Demo CartApp Test automtion regression suite" duration-ms="39015" started-at="2021-06-17T06:02:38Z" finished-at="2021-06-17T06:03:17Z">
     <groups>
     </groups>
+    <test name="Demo Cart Feature Testing - login" duration-ms="25069" started-at="2021-06-17T06:02:38Z" finished-at="2021-06-17T06:03:03Z">
+      <class name="com.qa.opencart.Tests.LoginPageTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="setUp" is-config="true" duration-ms="9122" started-at="2021-06-17T06:02:39Z" finished-at="2021-06-17T06:02:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyTitleTest()[pri:1, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="verifyTitleTest" duration-ms="240" started-at="2021-06-17T06:02:48Z" finished-at="2021-06-17T06:02:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitleTest -->
+        <test-method status="PASS" signature="verifyUrlTest()[pri:2, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="verifyUrlTest" duration-ms="61" started-at="2021-06-17T06:02:49Z" finished-at="2021-06-17T06:02:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUrlTest -->
+        <test-method status="PASS" signature="verifyForgotPwdLinkTest()[pri:3, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="verifyForgotPwdLinkTest" duration-ms="2875" started-at="2021-06-17T06:02:49Z" finished-at="2021-06-17T06:02:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyForgotPwdLinkTest -->
+        <test-method status="PASS" signature="loginToApplication()[pri:4, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="loginToApplication" duration-ms="11640" started-at="2021-06-17T06:02:52Z" finished-at="2021-06-17T06:03:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToApplication -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.opencart.Tests.LoginPageTest@2bfbffb2]" name="tearDown" is-config="true" duration-ms="144" started-at="2021-06-17T06:03:03Z" finished-at="2021-06-17T06:03:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.opencart.Tests.LoginPageTest -->
+    </test> <!-- Demo Cart Feature Testing - login -->
+    <test name="Demo Cart Feature Testing - Accounts Page " duration-ms="39015" started-at="2021-06-17T06:02:38Z" finished-at="2021-06-17T06:03:17Z">
+      <class name="com.qa.opencart.Tests.AccountsPageTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="setUp" is-config="true" duration-ms="15767" started-at="2021-06-17T06:02:38Z" finished-at="2021-06-17T06:02:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="accPageSetup()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="accPageSetup" is-config="true" duration-ms="14848" started-at="2021-06-17T06:02:54Z" finished-at="2021-06-17T06:03:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accPageSetup -->
+        <test-method status="PASS" signature="accSectionsListTest()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="accSectionsListTest" duration-ms="1050" started-at="2021-06-17T06:03:09Z" finished-at="2021-06-17T06:03:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accSectionsListTest -->
+        <test-method status="PASS" signature="verifyAccPageHeaderTest()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="verifyAccPageHeaderTest" duration-ms="2195" started-at="2021-06-17T06:03:10Z" finished-at="2021-06-17T06:03:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccPageHeaderTest -->
+        <test-method status="PASS" signature="verifyAccPageTitleTest()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="verifyAccPageTitleTest" duration-ms="54" started-at="2021-06-17T06:03:12Z" finished-at="2021-06-17T06:03:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccPageTitleTest -->
+        <test-method status="PASS" signature="verifyLogoutLinkTest()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="verifyLogoutLinkTest" duration-ms="3088" started-at="2021-06-17T06:03:12Z" finished-at="2021-06-17T06:03:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogoutLinkTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.opencart.Tests.AccountsPageTest@78e89bfe]" name="tearDown" is-config="true" duration-ms="1957" started-at="2021-06-17T06:03:15Z" finished-at="2021-06-17T06:03:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.opencart.Tests.AccountsPageTest -->
+    </test> <!-- Demo Cart Feature Testing - Accounts Page  -->
   </suite> <!-- Demo CartApp Test automtion regression suite -->
 </testng-results>
